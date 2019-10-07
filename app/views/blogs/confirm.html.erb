@@ -2,8 +2,11 @@
 
 <%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
   <%= form.hidden_field :content %>
+  <%= form.hidden_field :image_cache %>
 
   <p>本文:<%= @blog.content %></p>
+
+  <p>画像:<%= @blog.image_cache %></p>
   <%= form.submit  "登録する" %>
 
   <%= form.submit "戻る", name: 'back' %>
