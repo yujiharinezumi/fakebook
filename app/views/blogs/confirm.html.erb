@@ -6,7 +6,7 @@
 
   <p>本文:<%= @blog.content %></p>
 
-  <p>画像:<%= @blog.image_cache %></p>
+  <p>画像:<%= image_tag @blog.image.url %></p>
   <%= form.submit  "登録する" %>
 
   <%= form.submit "戻る", name: 'back' %>
