@@ -15,9 +15,20 @@
  *= require_self
  */
 
+html,
+body{
+  background-color:#E8EBEE;
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+
+
 .header{
   background-color:#4367B2;
   height:50px;
+
 }
 
 ul{
@@ -31,15 +42,38 @@ li{
 
 .top-menu li{
   float:left;
-  padding: 15px;
+  width:auto;
 }
 
 .top-menu li a{
   color:white;
+  text-decoration: none;
+  display: block;
+  padding: 15px;
+
 }
 
+.right{
+  float:right;
+}
 .clearfix:after{
   content:"";
   display:block;
   clear:both;
+}
+
+.footer{
+  background-color: #4367B2;
+  height: 50px;
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+  position: fixed;
+}
+
+.footer p {
+   color: #fff;
+   text-align: center;
+   padding-top:15px;
+
 }

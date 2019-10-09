@@ -9,36 +9,35 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="site-wrapper">
+          <header class="header">
+        <nav>
+          <ul class="top-menu clearfix">
 
 
+              <% if logged_in? %>
+              <li><%= link_to "Harinezumi", blogs_path %></li>
+              <li><%= link_to "Home", blogs_path %></li>
+              <li><%= link_to 'Create', new_blog_path %></li>
+                <span class="right">
+              <li><%= link_to "Profile", user_path(current_user.id) %></li>
+              <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
+              <% else %>
+              <span class="right">
+                <li><%= link_to "Sign up", new_user_path %></li>
+                <li><%= link_to "Log in", new_session_path %></li>
+              </span>
 
-
-
-      <header class="header">
+              <% end %>
+            </span>
+          </ul>
+        </nav>
         <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "#{key}") %>
         <% end %>
-        <nav>
-          <ul class="top-menu">
-            <li><a href="#">Harinezumi</a></li>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Create</a></li>
-            <% if logged_in? %>
-            <li><%= link_to "Profile", user_path(current_user.id) %></li>
-            <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
-            <% else %>
-              <li><%= link_to "Sign up", new_user_path %></li>
-              <li><%= link_to "Login", new_session_path %></li>
-            <% end %>
-          </ul>
-        </nav>
-
     </header>
-
       <div class="container">
-      <%= yield %>
+        <%= yield %>
       </div>
-
   </body>
 </html>

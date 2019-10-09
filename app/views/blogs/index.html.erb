@@ -1,12 +1,11 @@
-<h1>ブログ一覧</h1>
+<h1>投稿 一覧</h1>
 <p><%= notice %></p>
 
-<%= link_to '新しくブログを投稿する', new_blog_path %>
-
-
+<div class="wrapper">
+   <ul class="row">
 <% @blogs.each do |blog| %>
 <div class="row">
-  <div class="col-sm-6 col-md-4">
+  <div class="col-md-12">
     <div class="thumbnail">
       <%= image_tag blog.image.url %>
       <div class="caption">
@@ -22,3 +21,5 @@
   </div>
 </div>
 <% end %>
+</ul>
+</div>

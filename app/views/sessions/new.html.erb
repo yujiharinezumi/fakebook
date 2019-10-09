@@ -1,11 +1,18 @@
 <h1>Log in</h1>
-<%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
 
+<%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+  <p>
   <%= f.label :email %>
   <%= f.email_field :email %>
-
+</p>
+<p>
   <%= f.label :password %>
   <%= f.password_field :password %>
-
+</p>
+<p>
   <%= f.submit "Log in" %>
+</p>
+<p>
+  <%= link_to "Create a new account", new_user_path,class:"btn btn-info" %>
+</p>
 <% end %>
